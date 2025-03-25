@@ -21,7 +21,7 @@
 
 ## 🚀 Run the App → Using JAR File
 - Run the JAR file using the following command:
-- `java -jar techstore-app.jar`
+- `java -jar techstore.jar`
 
 ## 🚀 Run the App → Using Java
 - Go to `src/techstore/main/Main.java`
