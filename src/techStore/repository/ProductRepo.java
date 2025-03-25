@@ -49,63 +49,6 @@ public class ProductRepo {
 
     // retrieve all Products
     public List<Product> getAllProducts() {
-        /*
-        List<Product> productList = new ArrayList<>();
-        StringBuilder json = new StringBuilder();
-
-        File file = new File(PRODUCTS_FILE_PATH);
-
-        // create new file if not exist.
-        // return empty List.
-        if (!file.exists()) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-                writer.write("[]");
-            } catch (IOException e) {
-                AppLogger.error(e.getMessage(), e);
-            }
-            return productList;
-        }
-
-        // Read File Content
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line = reader.readLine();
-            while (line != null) {
-                json.append(line.trim());
-                line = reader.readLine();
-            }
-            // clean way
-            // reader.lines().forEach(line -> json.append(line.trim()));
-
-        } catch (IOException e) {
-            AppLogger.error(e.getMessage(), e);
-            return productList;
-        }
-
-        // Parse File Content
-        String content = json.toString();
-
-        // remove "[" and "]"
-        if (content.startsWith("[") && content.endsWith("]")) {
-            content = content.substring(1, content.length() - 1).trim();
-        }
-
-        if (content.isEmpty()) return productList;
-
-        String[] productsRaw = content.split("},\\s*\\{");
-
-        for (String p : productsRaw) {
-            p = p.trim();
-            if (!p.startsWith("{")) p = "{" + p;
-            if (!p.endsWith("}")) p = p + "}";
-
-            Optional<Product> product = parseProductFromJson(p);
-            // productList.add(product);
-            product.ifPresent(productList::add);
-        }
-        return productList;
-
-         */
-        // Function<String, Optional<Product>> parser = json -> parseProductFromJson(json);
         return readJsonFile(PRODUCTS_FILE_PATH, this::parseProductFromJson);
     }
 
@@ -113,23 +56,6 @@ public class ProductRepo {
     public void saveAllProducts(List<Product> products) {
         // open the file. create if not exist.
         File file = new File(PRODUCTS_FILE_PATH);
-
-        // Not required since FileWriter creates file if not exist.
-        /*
-        if (!file.exists()) {
-            try {
-                boolean isCreated = file.createNewFile();
-                if (!isCreated) {
-                    AppLogger.error("FILE NOT CREATED.");
-                    throw new RuntimeException("FILE NOT CREATED...");
-                }
-            } catch (IOException e) {
-                AppLogger.error(e.getMessage(), e);
-                throw new RuntimeException(e.getMessage());
-            }
-        }
-         */
-
         BufferedWriter writer = null;
 
         try {
