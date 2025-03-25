@@ -9,6 +9,10 @@
   - Delete products
   - View all products
   - View single product
+  - View low stock products
+- **Sales Management:**
+  - Make a sale
+  - View sales report
 
 ## 🔧 Prerequisites
 
