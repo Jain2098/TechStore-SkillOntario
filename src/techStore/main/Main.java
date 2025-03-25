@@ -147,17 +147,18 @@ public class Main {
     // END PRODUCT WRAPPER //
 
     // START SALES DISPLAY WRAPPER //
-    private void displaySaleWrapper(List<Sale> sales, double totalRevenue) {
+    private double displaySaleWrapper(List<Sale> sales) {
         System.out.println("-".repeat(80));
         System.out.printf("%-10s %-20s %-10s %-10s %-10s %-10s%n",
                 "ID", "DateTime", "ProductID", "Quantity", "Price", "Total");
         System.out.println("-".repeat(80));
 
+        double totalRevenue = 0.0;
         for (Sale sale : sales) {
             displaySale(sale);
             totalRevenue += sale.getPrice().doubleValue() * sale.getQuantity();
         }
-
+        return totalRevenue;
     }
 
     private void displaySaleWrapper(Sale sale) {
@@ -656,8 +657,7 @@ public class Main {
             if (sales.isEmpty()) {
                 System.out.println("No sales found in the selected time range.");
             } else {
-                double totalRevenue = 0.0;
-                displaySaleWrapper(sales, totalRevenue);
+                double totalRevenue = displaySaleWrapper(sales);
 
                 System.out.println("-".repeat(80));
                 System.out.println("Total Sales: " + sales.size());
@@ -669,8 +669,6 @@ public class Main {
             String again = sc.nextLine().trim().toLowerCase();
             if (!again.equals("y")) break;
         }
-
-        // endCommonDisplay();
     }
 
     // DISPLAY REPORT: LOW STOCK ITEMS//
