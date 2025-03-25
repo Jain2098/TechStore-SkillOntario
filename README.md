@@ -19,17 +19,16 @@
 - Java 21 (already compiled into the JAR)
 - Docker installed and running, if using Docker Method
 
-## 🚀 Run the App → Using JAR File
+## 🚀 Run → Using JAR File
 - Run the JAR file using the following command:
 - `java -jar techstore.jar`
 
-## 🚀 Run the App → Using Java
+## 🚀 Run → Using IntelliJ IDEA
 - Go to `src/techstore/main/Main.java`
 - Right-click → `Run 'Main.main()'`
 
-## 🚀 Run the App → Using Docker
-
-## Build Docker Image
+## 🚀 Run → Using Docker
+### Build Docker Image
 `docker build -t techstore-app .`
 
 ### Basic Run (Temporary):
