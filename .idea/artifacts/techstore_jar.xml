@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="techstore:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/techstore_jar</output-path>
+    <root id="archive" name="techstore.jar">
+      <element id="module-output" name="techstore" />
+    </root>
+  </artifact>
+</component>
