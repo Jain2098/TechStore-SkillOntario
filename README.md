@@ -19,6 +19,10 @@
 - Java 21 (already compiled into the JAR)
 - Docker installed and running, if using Docker Method
 
+## 🚀 Run the App → Using JAR File
+- Run the JAR file using the following command:
+- `java -jar techstore-app.jar`
+
 ## 🚀 Run the App → Using Java
 - Go to `src/techstore/main/Main.java`
 - Right-click → `Run 'Main.main()'`
